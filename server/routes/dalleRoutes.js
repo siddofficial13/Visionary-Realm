@@ -28,7 +28,7 @@ router.route('/').post(async (req,res) => {
         res.status(200).json({ photo: image });
         
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
         res.status(500).send(error?.response.data.error.message);
     }
 })

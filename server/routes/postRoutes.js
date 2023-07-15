@@ -18,6 +18,7 @@ router.route("/").get(async (req, res) => {
 
         res.status(200).json({ success: true, data: posts });
     } catch (error) {
+       console.log(error.response.data);
         res.status(500).json({ success: false, message: error });
     }
 });
@@ -33,6 +34,7 @@ router.route("/").post(async (req, res) => {
     });
     res.status(201).json({ success: true, data: newPost });
   } catch (error) {
+    console.log(error.response.data);
     res.status(500).json({ success: false, message: error });
   }
 });
